@@ -27,7 +27,7 @@ jobs:
 
           
           
-      - name: Get Live Admin Allure history
+      - name: Get booking Admin Allure history
         uses: actions/checkout@v2
         with:
           ref: gh-pages
