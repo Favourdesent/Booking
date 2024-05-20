@@ -1,0 +1,18 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Verify that Status code name has string 'OK'", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Verify booking details", function () {
+    var jsonData = pm.response.json();
+    
+    pm.expect(jsonData.firstname).to.eql("favour");
+    pm.expect(jsonData.lastname).to.eql("desent");
+    pm.expect(jsonData.totalprice).to.eql(50000);
+    pm.expect(jsonData.depositpaid).to.be.true;
+    pm.expect(jsonData.additionalneeds).to.eql("Breakfast");
+    
+    pm.expect(jsonData.bookingdates.checkin).to.eql("2024-05-18");
+    pm.expect(jsonData.bookingdates.checkout).to.eql("2024-05-19");
+});

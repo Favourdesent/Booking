@@ -1,0 +1,23 @@
+var jsonData = pm.response.json();
+pm.test("booking Id", function () {
+    pm.environment.set("bookingid",  jsonData.bookingid);  
+}); 
+pm.test("Booking ID is present", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.bookingid).to.exist;
+});
+pm.test("Verify booking details", function () {
+    var jsonData = pm.response.json();
+    
+    pm.expect(jsonData.booking.firstname).to.eql("favour");
+    pm.expect(jsonData.booking.lastname).to.eql("Elijah");
+    pm.expect(jsonData.booking.totalprice).to.eql(1000);
+    pm.expect(jsonData.booking.depositpaid).to.be.true;
+    pm.expect(jsonData.booking.additionalneeds).to.eql("Breakfast");
+    
+    pm.expect(jsonData.booking.bookingdates.checkin).to.eql("2024-05-18");
+    pm.expect(jsonData.booking.bookingdates.checkout).to.eql("2024-05-19");
+});
+pm.test("Verify Status code is 201", function () {
+    pm.response.to.have.status(201);
+});

@@ -1,0 +1,10 @@
+{
+    "Authorization": "Bearer 92be5d60b9bb562",
+    "User-Agent": "PostmanRuntime/7.37.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "c30b53bf-cffc-478c-b75b-24628ad70da2",
+    "Host": "restful-booker.herokuapp.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

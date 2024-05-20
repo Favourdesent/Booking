@@ -1,0 +1,7 @@
+{
+    "bookingdates" : {
+        "checkin" : "2024-05-20",
+        "checkout" : "2024-06-01"
+    },
+    "additionalneeds" : "Dinner"
+}
